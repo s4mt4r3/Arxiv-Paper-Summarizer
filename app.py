@@ -35,8 +35,9 @@ def model_size_mb(path: str) -> float:
 @st.cache_resource(show_spinner="Loading model...")
 def load_model():
     try:
-        tokenizer = AutoTokenizer.from_pretrained(HF_MODEL_NAME)
-        model = BartForConditionalGeneration.from_pretrained(HF_MODEL_NAME)
+        hf_token = st.secrets.get("HF_TOKEN")
+        tokenizer = AutoTokenizer.from_pretrained(HF_MODEL_NAME, token=hf_token)
+        model = BartForConditionalGeneration.from_pretrained(HF_MODEL_NAME, token=hf_token)
         model.eval()
         model_label = "INT8 Quantized (HF Hub)"
         size_mb = 286
