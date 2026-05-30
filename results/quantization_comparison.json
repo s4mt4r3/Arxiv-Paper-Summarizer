@@ -1,0 +1,29 @@
+{
+  "original": {
+    "size_mb": 531.8,
+    "latency_ms": 3975.4,
+    "rouge1": 0.557,
+    "speedup": "1.0x",
+    "size_reduction": "\u2014",
+    "accuracy_loss": "\u2014"
+  },
+  "dynamic_int8": {
+    "size_mb": 285.7,
+    "size_reduction": "46.3%",
+    "latency_ms": 2802.9,
+    "speedup": "1.42x",
+    "rouge1": 0.5379,
+    "accuracy_loss": "3.44%"
+  },
+  "onnx_int8": {
+    "size_mb": 212.4,
+    "size_reduction": "60.1%",
+    "latency_ms": 20881.4,
+    "speedup": "0.19x",
+    "rouge1": 0.4804,
+    "accuracy_loss": "13.76%"
+  },
+  "recommended": "dynamic_int8",
+  "reason": "Highest speedup (1.42x) with <5% quality loss",
+  "gptq_awq_note": "GPTQ and AWQ are decoder-only LLM quantization techniques (LLaMA, GPT). They do not support encoder-decoder seq2seq models (BART, PEGASUS, T5) and require CUDA. ONNX INT8 is the correct alternative for this architecture."
+}

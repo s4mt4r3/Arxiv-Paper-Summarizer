@@ -1,0 +1,85 @@
+{
+  "model_id": "./fine_tuned_arxiv_bart",
+  "eval_sample": 200,
+  "bertscore_model": "roberta-large",
+  "bertscore_f1_mean": 0.9187,
+  "bertscore_f1_median": 0.9213,
+  "bertscore_f1_std": 0.0249,
+  "bertscore_f1_min": 0.8158,
+  "bertscore_f1_max": 0.9798,
+  "rouge1_for_comparison": 0.5596,
+  "correlation_with_rouge": 0.8837,
+  "interpretation": "ROUGE measures n-gram overlap (0.56), BERTScore measures semantic similarity (0.92). High BERTScore indicates summaries are semantically high-quality despite lower ROUGE.",
+  "example_summaries": [
+    {
+      "paper_title": "Comparative Analysis of AutoML and BiLSTM Models for Cyberbullying Detection on Indonesian Instagram Comments",
+      "generated_summary": "Cyberbullying on social media platforms, particularly Instagram, poses a serious threat to mental health, especially among Indonesian youth. This study presents a comparative analysis of machine learning (ML) and deep learning (DL) models for detecting cyberbullying in Indonesian-language Instagram comments. Three ML algorithms Naive Bayes, Logistic Regression, and Support Vector Machine (SVM) using TF-IDF feature representation are compared against two DL architectures Bi-LSTM and Bi",
+      "ground_truth": "This study compares machine learning and deep learning approaches for cyberbullying detection in Indonesian-language Instagram comments. Using a balanced dataset of 650 comments labeled as Bullying and Non-Bullying, the study evaluates Naive Bayes, Logistic Regression, and Support Vector Machine wit...",
+      "rouge1": 0.3731,
+      "bertscore_f1": 0.879
+    },
+    {
+      "paper_title": "Breaking the Autoregressive Chain: Hyper-Parallel Decoding for Efficient LLM-Based Attribute Value Extraction",
+      "generated_summary": "Some text generation tasks, such as Attribute Value Extraction (AVE), require decoding multiple independent sequences from the same doc-ument context. While standard autoregressive decoding is slow due to its sequential nature, the independence between output sequences of-fers an opportunity for parallelism. We present Hyper-Parallel Decoding, a novel decoding algorithm that accelerates offline decoding by leveraging both shared memory and computa-tion across batches. HPD enables out-of-order token generation through position ID manip",
+      "ground_truth": "Some text generation tasks, such as Attribute Value Extraction (AVE), require decoding multiple independent sequences from the same document context. While standard autoregressive decoding is slow due to its sequential nature, the independence between output sequences offers an opportunity for paral...",
+      "rouge1": 0.5569,
+      "bertscore_f1": 0.9222
+    },
+    {
+      "paper_title": "Option-Order Randomisation Reveals a Distributional Position Attractor in Prompted Sandbagging",
+      "generated_summary": "A predecessor pilot (Cacioli, 2026) found that Llama-3-8B implements prompted sandbagging as positional collapse rather than answer avoidance. However, fixed option ordering in MMLU-Pro left open whether this reflected a model-level position-dominant policy or dataset-level distractor structure. This pre-registered follow-up (3 models, 2,000 MMLu-Pro items, 4 conditions, 24,000 primary trials) added cyclic option-order randomisation as the critical control.",
+      "ground_truth": "A predecessor pilot (Cacioli, 2026) found that Llama-3-8B implements prompted sandbagging as positional collapse rather than answer avoidance. However, fixed option ordering in MMLU-Pro left open whether this reflected a model-level position-dominant policy or dataset-level distractor structure. Thi...",
+      "rouge1": 0.462,
+      "bertscore_f1": 0.914
+    },
+    {
+      "paper_title": "Flashback: A Reversible Bilateral Run-Peeling Decomposition of Strings",
+      "generated_summary": "We introduce Flashback, a reversible string decomposition that repeatedly peels the maximal leading and trailing character runs from a sentinel-wrapped input, recording each pair as one bilateral token. Decomposition and reconstruction both run in O(n) time and space. Our central result is a run-pairing theorem: Flashback is equivalent to pairing the first run of the string with the last, the second with the second-to-last, and so on. This gives an exact token count of 1",
+      "ground_truth": "We introduce Flashback, a reversible string decomposition that repeatedly peels the maximal leading and trailing character runs from a sentinel-wrapped input, recording each pair as one bilateral token. Decomposition and reconstruction both run in O(n) time and space. Our central result is a run-pai...",
+      "rouge1": 0.6612,
+      "bertscore_f1": 0.9359
+    },
+    {
+      "paper_title": "Evergreen: Efficient Claim Verification for Semantic Aggregates",
+      "generated_summary": "With recent semantic query processing engines, semantic aggrega-tion has become a primitive operator, enabling the reduction of a correlation into a natural language aggregate using an LLM. However, the resulting semantic aggregate may contain claims that are not grounded in the underlying relation. Verifying such claims is challenging: they often involve quantifiers, groupings, and comparisons over relations that far exceed LLM context windows and require a costly combination of semantic and symbolic processing. We present Evergreen, a system that recasts claim verification as",
+      "ground_truth": "With recent semantic query processing engines, semantic aggregation has become a primitive operator, enabling the reduction of a relation into a natural language aggregate using an LLM. However, the resulting semantic aggregate may contain claims that are not grounded in the underlying relation. Ver...",
+      "rouge1": 0.4378,
+      "bertscore_f1": 0.8995
+    },
+    {
+      "paper_title": "CacheRAG: A Semantic Caching System for Retrieval-Augmented Generation in Knowledge Graph Question Answering",
+      "generated_summary": "The integration of Large Language Models (LLMs) with Retrieval-Augmented Generation (RAG) has significantly advanced Knowledge Graph Question Answering (KGQA). However, existing LLM-driven KGKA systems act as stateless planners, generating retrieval plans in isolation without exploiting historical query patterns: analogous to a database system that optimizes every query from scratch without a plan cache. This fundamental design flaw leads to schema hallucinations and limited retrieval coverage. We propose CacheRAG, a systematic cache-augmented architecture",
+      "ground_truth": "The integration of Large Language Models (LLMs) with Retrieval-Augmented Generation (RAG) has significantly advanced Knowledge Graph Question Answering (KGQA). However, existing LLM-driven KGQA systems act as stateless planners, generating retrieval plans in isolation without exploiting historical q...",
+      "rouge1": 0.4884,
+      "bertscore_f1": 0.9096
+    },
+    {
+      "paper_title": "Entropy Centroids as Intrinsic Rewards for Test-Time Scaling",
+      "generated_summary": "An effective way to scale up test-time compute of large language models is to sample multiple responses and then select the best one, as in GrokHeavy and Gemini Deep Think. Existing selection methods often rely on external reward models, which requires training a strong reward model and introduces additional computation overhead. As an alternative, previous approaches have explored intrinsic signals, such as confidence and entropy, but these signals are noisy with naive aggregation. In this work, we observe that high-entropy tokens tend to cluster into consecutive groups during inference, providing a more stable notion of model uncertainty than indi-vidual tokens. Together, these clusters reveal temporal patterns",
+      "ground_truth": "An effective way to scale up test-time compute of large language models is to sample multiple responses and then select the best one, as in Grok Heavy and Gemini Deep Think. Existing selection methods often rely on external reward models, which requires training a strong reward model and introduces ...",
+      "rouge1": 0.5367,
+      "bertscore_f1": 0.9203
+    },
+    {
+      "paper_title": "EvoSelect: Data-Efficient LLM Evolution for Targeted Task Adaptation",
+      "generated_summary": "Adapting large language models (LLMs) to a targeted task efficiently andeffectively remains a fundamental challenge. Such adaptation often requires iteratively improving the model toward a target task, yet collecting high-quality human-labeled data to support this process is costly and difficult to scale. As a result, synthetic data generation has emerged as a flexible and scalable alternative. One straightforward approach is through an iterative generation-selection-training loop, where candidate data are synthesized through an external generator, the model is updated using these data and the process is repeated over iterations. However, generated samples can be noisy, highly redundant, or even misaligned with the targeted task distribution.",
+      "ground_truth": "Adapting large language models (LLMs) to a targeted task efficiently and effectively remains a fundamental challenge. Such adaptation often requires iteratively improving the model toward a targeted task, yet collecting high-quality human-labeled data to support this process is costly and difficult ...",
+      "rouge1": 0.5863,
+      "bertscore_f1": 0.9303
+    },
+    {
+      "paper_title": "Test-Time Safety Alignment",
+      "generated_summary": "Recent work has shown that a model's input word embeddings can serve as effective control variables for steering its behavior toward outputs that satisfy desired prop-erties. However, this has only been demonstrated for pretrained text-completion models on the relatively simple objective of reducing surface-level profanity in short continuations. A natural and practically important question is how well input embedded models can control aligned models, which produce an imbalanced refuse-or-comply output distribution rather than the smooth distribution character",
+      "ground_truth": "Recent work has shown that a model's input word embeddings can serve as effective control variables for steering its behavior toward outputs that satisfy desired properties. However, this has only been demonstrated for pretrained text-completion models on the relatively simple objective of reducing ...",
+      "rouge1": 0.6375,
+      "bertscore_f1": 0.9278
+    },
+    {
+      "paper_title": "Structural Generalization on SLOG without Hand-Written Rules",
+      "generated_summary": "Structural generalization in semantic parsing requires systems to apply learned compositional rules to novel structural combinations. Existing approaches either rely on hand-written algebraic rules (AM-Parser) or fail to generalize structurally (Transformer-based models). We present an alternative requiring no written compositional rule, based on a neural cellular automaton (NCA) with arete bottleneck: all compositionalrules are learned from data through local transliteration. On the SLOG benchmark, the system achieves an overall accuracy of 67.3\u00b10.",
+      "ground_truth": "Structural generalization in semantic parsing requires systems to apply learned compositional rules to novel structural combinations. Existing approaches either rely on hand-written algebraic rules (AM-Parser) or fail to generalize structurally (Transformer-based models). We present an alternative r...",
+      "rouge1": 0.5017,
+      "bertscore_f1": 0.8996
+    }
+  ]
+}

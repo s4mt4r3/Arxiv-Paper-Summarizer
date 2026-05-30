@@ -1,0 +1,31 @@
+# Environment
+.env
+.streamlit/secrets.toml
+
+# Model directories (too large for git — download/train locally)
+fine_tuned_arxiv_bart/
+quantized_arxiv_bart/
+quantized_int8/
+quantized_onnx/
+quantized_onnx_int8/
+quantized_arxiv_best/
+
+# Data & caches (regenerate with scrape_arxiv.py)
+arxiv_papers.json
+domain_papers_cache.json
+val_summaries_cache.json
+
+# Logs
+*.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.Python
+
+# macOS
+.DS_Store
+
+# Claude
+.claude/

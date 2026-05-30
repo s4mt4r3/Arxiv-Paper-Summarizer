@@ -1,0 +1,66 @@
+{
+  "model_id": "./fine_tuned_arxiv_bart",
+  "papers_per_domain": 200,
+  "indomain_rouge1": 0.5596,
+  "ood_avg_rouge1": 0.5463,
+  "performance_gap_pct": 2.38,
+  "analysis": "Domain shift analysis:\n  In-domain (CS.CL) ROUGE-1:   0.5596\n  Out-of-domain average ROUGE-1: 0.5463\n  Performance gap: 2.4% degradation on unfamiliar domains\n  Suggests model overfits to NLP-specific language patterns.",
+  "domains": [
+    {
+      "key": "cs.CL",
+      "label": "CS.CL (in-domain)",
+      "num_papers": 200,
+      "rouge1": 0.5596,
+      "rougeL": 0.5499,
+      "bertscore_f1": 0.9187,
+      "latency_ms": 4266.4,
+      "example_summaries": [
+        "Cyberbullying on social media platforms, particularly Instagram, poses a serious threat to mental health, especially among Indonesian youth. This study presents a comparative analysis of machine learning (ML) and deep learning (DL) models for detecting cyberbullying in Indonesian-language Instagram comments. Three ML algorithms Naive Bayes, Logistic Regression, and Support Vector Machine (SVM) using TF-IDF feature representation are compared against two DL architectures Bi-LSTM and Bi",
+        "Some text generation tasks, such as Attribute Value Extraction (AVE), require decoding multiple independent sequences from the same doc-ument context. While standard autoregressive decoding is slow due to its sequential nature, the independence between output sequences of-fers an opportunity for parallelism. We present Hyper-Parallel Decoding, a novel decoding algorithm that accelerates offline decoding by leveraging both shared memory and computa-tion across batches. HPD enables out-of-order token generation through position ID manip",
+        "A predecessor pilot (Cacioli, 2026) found that Llama-3-8B implements prompted sandbagging as positional collapse rather than answer avoidance. However, fixed option ordering in MMLU-Pro left open whether this reflected a model-level position-dominant policy or dataset-level distractor structure. This pre-registered follow-up (3 models, 2,000 MMLu-Pro items, 4 conditions, 24,000 primary trials) added cyclic option-order randomisation as the critical control."
+      ]
+    },
+    {
+      "key": "cs.CV",
+      "label": "CS.CV",
+      "num_papers": 200,
+      "rouge1": 0.5477,
+      "rougeL": 0.5452,
+      "bertscore_f1": 0.9237,
+      "latency_ms": 3772.3,
+      "example_summaries": [
+        "Sparse-view 3D reconstruction is increasingly addressed with feed-forward splatting networks that predict explicit primitives directly from images. Yet most existing methods remain centered on Gaussian primitives and expose surfaces only indirectly: extracting a usable mesh for downstream simulation, physics reasoning, or embodied interaction still requires expensive post-hoc steps that break the feed",
+        "Generating high-fidelity and controllable synthetic data is critical for advancing end-to-end autonomous driving, particularly for addressing the long tail of rare safety-critical scenarios. Existing occupancy-guided methods typically rely on shallow conditioning mechanisms and reference-frame-dependent video synthesis, which limits fine-grained controllability from arbitrary BEV layouts and restricts their applicability for scalable simulation. In this paper, we propose AnyScene, a unified occupancy-centric framework",
+        "Subject-driven image generation aims to synthesize new images that preserve the identity of the given subject while following textual instructions. Existing approaches often encode text and reference images separately. This limits cross-modal reasoning abilities and causes copy-paste artifacts. Recent frameworks that connect multimodal models and diffusion models improve instruction following, but largely overlook identity preservation. To address these limitations, we condition diffusion models on Multimodal Large Language Models (MLLMs) that jointly encode text"
+      ]
+    },
+    {
+      "key": "cs.LG",
+      "label": "CS.LG",
+      "num_papers": 200,
+      "rouge1": 0.5538,
+      "rougeL": 0.552,
+      "bertscore_f1": 0.9235,
+      "latency_ms": 4036.7,
+      "example_summaries": [
+        "This paper studies the next major bottleneck in agentic AI as system scaling, not only model scaling: the design of auditable, persistent, modular, and verifiable architectures around foundation models. We refer to this shift as scaling the harness: treating the structured execution layer around a foundation model as a first-class object of design, evaluation, and optimization. Although recent large language models enable agents to use tools, retrieve information, maintain memory, and execute long-horizon workflows, evaluation remains largely model-centric, often reducing agents to final-task success while treating memory, retrieval, tool use, orchestration, verification,",
+        "Subject-driven image generation aims to synthesize new images that preserve the identity of the given subject while following textual instructions. Existing approaches often encode text and reference images separately. This limits cross-modal reasoning abilities and causes copy-paste artifacts. Recent frameworks that connect multimodal models and diffusion models improve instruction following, but largely overlook identity preservation. To address these limitations, we condition diffusion models on Multimodal Large Language Models (MLLMs) that jointly encode text",
+        "Multimodal Large Language Models (MLLMs) achieve versatility by reformulating diverse tasks into a unified instruction-following framework via instruction tuning. However, real-world deployment requires continuous adaptation to emerging tasks, motivating Multimodual Continual Instruction Tuning (MCIT). Despite its growing importance, current MCIT research is hindered by severe engineering bottlenecks. Existing methods are typically implemented by directly modifying the base MLLM codebase, which imposes substantial implementation overhead and yields method-specific architectures that severely limit code reuse and fair comparison. To address this, we introduce Prism, a plug-in reproducible codebase specifically designed for scalable MCIT. It separates algorithmic development from the backbone implementation via"
+      ]
+    },
+    {
+      "key": "stat.ML",
+      "label": "STAT.ML",
+      "num_papers": 200,
+      "rouge1": 0.5374,
+      "rougeL": 0.5346,
+      "bertscore_f1": 0.9198,
+      "latency_ms": 4115.1,
+      "example_summaries": [
+        "Bayesian optimal experimental design (BOED) selects experiments to maximize information gain about model parameters. However, in decision-critical settings, reducing parameter uncertainty does not necessarily improve downstream decisions, as only specific parameter directions relevant to the objective truly matter. We propose GoBOED, a goal-driven BOED framework that directly optimizes experimental designs for a specified decision",
+        "Frontier LLMs now perform strongly across a wide range of physics evaluations, but it is hard to disentangle genuine reasoning from recall of established science. We introduce DiscoverPhysics, an interactive benchmark that asks a LLM agent to discover the laws of motion of a simulated world whose physics deliberately deviates from our own. We construct 22 worlds governed by, among others, screened and fractional-power gravity, multi-species couplings, hidden dark-matter-like particles, non-coordinate",
+        "Stochastic gradient descent (SGD) is a foundational algorithm for large-scale statistical learning and stochastic optimization. However, statistical inference based on SGD iterates remains challenging when stochastically gradients have infinite variance, as the relevant limiting distributions depend on unknown nuisance parameters. In this paper, we develop an efficient, model-agnostic methodology for constructing confidence regions from SGD trajectories that applies in both finite- and infinite-variance regimes. The procedure is based on a joint weak convergence result for the Polyak-Ruppert averaged estimator and an empirical second-moment normalizer constructed from stoch"
+      ]
+    }
+  ]
+}

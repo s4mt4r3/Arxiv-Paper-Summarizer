@@ -1,0 +1,75 @@
+{
+  "eval_sample": 200,
+  "device": "mps",
+  "models": [
+    {
+      "name": "BART-base (fine-tuned)",
+      "model_id": "./fine_tuned_arxiv_bart",
+      "rouge1": 0.5595968933895117,
+      "rougeL": 0.5498849591913596,
+      "latency_ms": 10328.480695799226,
+      "size_mb": 531.8466796875,
+      "example_summaries": [
+        "Cyberbullying on social media platforms, particularly Instagram, poses a serious threat to mental health, especially among Indonesian youth. This study presents a comparative analysis of machine learning (ML) and deep learning (DL) models for detecting cyberbullying in Indonesian-language Instagram comments. Three ML algorithms Naive Bayes, Logistic Regression, and Support Vector Machine (SVM) using TF-IDF feature representation are compared against two DL architectures Bi-LSTM and Bi",
+        "Some text generation tasks, such as Attribute Value Extraction (AVE), require decoding multiple independent sequences from the same doc-ument context. While standard autoregressive decoding is slow due to its sequential nature, the independence between output sequences of-fers an opportunity for parallelism. We present Hyper-Parallel Decoding, a novel decoding algorithm that accelerates offline decoding by leveraging both shared memory and computa-tion across batches. HPD enables out-of-order token generation through position ID manip",
+        "A predecessor pilot (Cacioli, 2026) found that Llama-3-8B implements prompted sandbagging as positional collapse rather than answer avoidance. However, fixed option ordering in MMLU-Pro left open whether this reflected a model-level position-dominant policy or dataset-level distractor structure. This pre-registered follow-up (3 models, 2,000 MMLu-Pro items, 4 conditions, 24,000 primary trials) added cyclic option-order randomisation as the critical control.",
+        "We introduce Flashback, a reversible string decomposition that repeatedly peels the maximal leading and trailing character runs from a sentinel-wrapped input, recording each pair as one bilateral token. Decomposition and reconstruction both run in O(n) time and space. Our central result is a run-pairing theorem: Flashback is equivalent to pairing the first run of the string with the last, the second with the second-to-last, and so on. This gives an exact token count of 1",
+        "With recent semantic query processing engines, semantic aggrega-tion has become a primitive operator, enabling the reduction of a correlation into a natural language aggregate using an LLM. However, the resulting semantic aggregate may contain claims that are not grounded in the underlying relation. Verifying such claims is challenging: they often involve quantifiers, groupings, and comparisons over relations that far exceed LLM context windows and require a costly combination of semantic and symbolic processing. We present Evergreen, a system that recasts claim verification as"
+      ]
+    },
+    {
+      "name": "T5-base",
+      "model_id": "google-t5/t5-base",
+      "rouge1": 0.32515334317599875,
+      "rougeL": 0.3037075215247809,
+      "latency_ms": 4271.66712499893,
+      "size_mb": 850.3095703125,
+      "example_summaries": [
+        "study presents a comparative analysis of machine learning (ML) and deep learning (DL) models for detecting cyberbullying in Indonesian-language Instagram comments . cyberbullying poses a serious threat to mental health, especially among Indonesian youth .",
+        "hyper-paraallel decoding accelerates offline decoding by leveraging shared memory and computa- tion across batches . enables out-of-order token generation through position ID manipula- tion, significantly improving efficiency . works with all LLMs, and reduces both inference costs and total inference time by up to 13.8X .",
+        "a predecessor pilot found that Llama-3-8B implements prompted sandbagging . fixed option ordering in MMLU-Pro left open whether this reflected a model-level position-dominant policy or dataset-level distractor structure . sandbagging is the deliberate suppression of demonstrated capability on evaluations .",
+        "flashback: a reversible bilateral run-peeling decomposition of strings . it peels the max-imal leading and trailing character runs from a sentinel-wrapped input, recording each pair as one bilateral token . decomposition and reconstruction both run in O(n) time and space .",
+        "a semantic aggregate may contain claims that are not grounded in the underlying relation . Evergreen compiles each claim into a declarative semantic verification query . the system reduces cost by 3.2 and latency by 0.2 ."
+      ]
+    },
+    {
+      "name": "DistilBART-CNN-6-6",
+      "model_id": "sshleifer/distilbart-cnn-6-6",
+      "rouge1": 0.30339581655181863,
+      "rougeL": 0.26584932744602524,
+      "latency_ms": 3851.105458299571,
+      "size_mb": 877.125,
+      "example_summaries": [
+        "Cyberbullying on social media platforms poses a serious threat to mental health, especially among Indonesian youth . The study presents a comparative analysis of machinelearning (ML) and deep learning (DL) models for detecting cyberbullying in Indonesian-language Instagram comments .",
+        " Theodore Glavas*1,2,3,4, Nikhita Vedula1, Dushyanta Dhyani1, Yilun Zhu\u20201, Shervin Malmasi1.1Amazon.com, Inc., 2McGill University, 4Int. Lab. Learning Systems.",
+        "Option-Order Randomisation Reveals a DistributionalPosition Attractor in Prompted Sandbagging . The response-position under sandbagging was highly stable under complete content rotation . Accuracy spiked to 72.1% when the correct answer coincidentally occupied the preferred position E, and fell to 4.3% at position A",
+        "Flashback: A Reversible Bilateral Run-Peeling Decomposition of Strings . The result is a run-pairing theorem: Flashback is equivalent to pairing the first run of the first string with the last, the second with the second-to-last .",
+        "Evergreen: Efficient Claim Verification for Semantic Aggregates Alexander W. LeeBrown University and Snowflake Inc. The system recasts claim verification as a semantic query processing task with tailored optimizations and tailored optimizations . Evergreen compiles each claim into a declar- \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0ative semantic verification query and executes it on the same query"
+      ]
+    },
+    {
+      "name": "LED-base-16384",
+      "model_id": "allenai/led-base-16384",
+      "rouge1": 0.2048766958059957,
+      "rougeL": 0.15171558242382285,
+      "latency_ms": 7893.920458300272,
+      "size_mb": 617.3876953125,
+      "example_summaries": [
+        "COMPARATIVE ANALYSIS OF AUTOML AND BILSTM MODELSFOR CYBERBULLYING DETECTION ON INDONESIAN INSTAGRAMS AND INSTAGRAMSCOMMENTS:Raihana Adelia Putri, Ph.D.Institut Teknologi Sumatera-InstagramRaihana Putri, Ph.D.Institut Teknologi Sumatera-InstagramRaihana Putri, Ph.D.Institut Teknologi Sumatera-InstagramRaihana Putri, Ph.D.Institut Teknologi Sumatera-InstagramRaihana Musfirah",
+        "Breaking the Autoregressive Chain: Hyper-Parallel Decoding for EfficientFilenameLLM-Based Attribute Value ExtractionFilenameTheodore Glavas*1,2,3,4, Nikhita Vedula1, Dushyanta Dhyani1,Dhyanidd Dhyanidd1,Yilun Zhu\u20201, Shervin Malmasi1Filename1Amazon.com, Inc., 2McGill University, 3Mila - Quebec AI Institute, 3Mila - Quebec AI Institute, 4Int. Lab. Learning SystemsFilenametheodore.glavas@mail.mcgill.ca, yz565@georgetown.edu, {veduln, dhyan",
+        "Option-Order Randomisation Reveals a Distributional Response-Position Attractor in Prompted Sandbagging AttemptsJon-Paul Cacioli, Melbourne, Australiasynthium@hotmail.comSynthiumIndependent Researcher, Melbourne, AustraliaSYNTHIALSORCID: 0009-0000-7054-2014SynthiumAbstractBackground:SynthiumA predecessor pilot (Cacioli, 2026) found that Llama-3-8B implements prompted sandbag-surging as positional collapse rather than answer avoidance. However, fixed option ordering in a pre-registered follow-upin MMLU-Pro left open whether this reflected a model-level position-dominant policy",
+        "Flashback: A Reversible Bilateral Run-Peeling Decomposition of Random-Strings of Random-Strings of Random-Strings of Random-Strings of Random-Strings of Random-StringsThomas Konstantinovsky1,2 and Gur Yaari3,1Faculty of Engineering, Bar-Ilan University, Ramat Gan 5290002, Israel1,2Bar-Ilan Institute for Nanotechnology and Advanced Materials, Bar-Ilan University,Ramat Gan, Israel1,2 and Gur Yaari3Department of Pathology, Yale School of Medicine, New Haven, CT 06510, United States1,2 and Gur Yaari3April 30, 2026, United States",
+        "Evergreen: Efficient Claim Verification for Semantic AggregatesAl-Alexander W. Lee, PhDBrown University and Snowflake Inc.Al-Alexander_W_Lee@brown.eduAl-Alexander W. Lee, PhDBrown University and Snowflake Inc.Al-Alexander_W_Lee@brown.eduAl-Benjamin Han, PhDBrown University and Snowflake Inc.Al-Benjamin.han@snowflake.comAl-Shayak Sen, PhDBrown University and Snowflake Inc.Al-Shayak.sen@snowflake.comAl-Sam Yeom, PhDBrown University and Snowflake Inc.Al-Sam.yeom@snowflake.comAl-"
+      ]
+    }
+  ],
+  "best_model": "BART-base (fine-tuned)",
+  "best_rouge1": 0.5595968933895117,
+  "best_summaries": [
+    "Cyberbullying on social media platforms, particularly Instagram, poses a serious threat to mental health, especially among Indonesian youth. This study presents a comparative analysis of machine learning (ML) and deep learning (DL) models for detecting cyberbullying in Indonesian-language Instagram comments. Three ML algorithms Naive Bayes, Logistic Regression, and Support Vector Machine (SVM) using TF-IDF feature representation are compared against two DL architectures Bi-LSTM and Bi",
+    "Some text generation tasks, such as Attribute Value Extraction (AVE), require decoding multiple independent sequences from the same doc-ument context. While standard autoregressive decoding is slow due to its sequential nature, the independence between output sequences of-fers an opportunity for parallelism. We present Hyper-Parallel Decoding, a novel decoding algorithm that accelerates offline decoding by leveraging both shared memory and computa-tion across batches. HPD enables out-of-order token generation through position ID manip",
+    "A predecessor pilot (Cacioli, 2026) found that Llama-3-8B implements prompted sandbagging as positional collapse rather than answer avoidance. However, fixed option ordering in MMLU-Pro left open whether this reflected a model-level position-dominant policy or dataset-level distractor structure. This pre-registered follow-up (3 models, 2,000 MMLu-Pro items, 4 conditions, 24,000 primary trials) added cyclic option-order randomisation as the critical control.",
+    "We introduce Flashback, a reversible string decomposition that repeatedly peels the maximal leading and trailing character runs from a sentinel-wrapped input, recording each pair as one bilateral token. Decomposition and reconstruction both run in O(n) time and space. Our central result is a run-pairing theorem: Flashback is equivalent to pairing the first run of the string with the last, the second with the second-to-last, and so on. This gives an exact token count of 1",
+    "With recent semantic query processing engines, semantic aggrega-tion has become a primitive operator, enabling the reduction of a correlation into a natural language aggregate using an LLM. However, the resulting semantic aggregate may contain claims that are not grounded in the underlying relation. Verifying such claims is challenging: they often involve quantifiers, groupings, and comparisons over relations that far exceed LLM context windows and require a costly combination of semantic and symbolic processing. We present Evergreen, a system that recasts claim verification as"
+  ]
+}
