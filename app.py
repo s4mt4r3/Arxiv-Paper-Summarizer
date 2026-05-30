@@ -34,37 +34,17 @@ def model_size_mb(path: str) -> float:
 
 @st.cache_resource(show_spinner="Loading model...")
 def load_model():
-    # Try HF Hub first (for Streamlit Cloud), fall back to local
     try:
         tokenizer = AutoTokenizer.from_pretrained(HF_MODEL_NAME)
         model = BartForConditionalGeneration.from_pretrained(HF_MODEL_NAME)
         model.eval()
         model_label = "INT8 Quantized (HF Hub)"
-        # Estimate size from HF Hub model card or use a default
         size_mb = 286
-    except Exception:
-        # Fall back to local model
-        tokenizer = AutoTokenizer.from_pretrained(FINETUNED_DIR)
-        torch.backends.quantized.engine = "qnnpack"
-        quant_weights = os.path.join(QUANTIZED_DIR, "pytorch_model.bin")
-
-        if os.path.exists(quant_weights):
-            base = BartForConditionalGeneration.from_pretrained(FINETUNED_DIR)
-            base.eval()
-            model = torch.quantization.quantize_dynamic(
-                base, {torch.nn.Linear}, dtype=torch.qint8
-            )
-            model.load_state_dict(torch.load(
-                quant_weights, map_location="cpu"))
-            model_label = "INT8 Quantized (Local)"
-            size_mb = model_size_mb(QUANTIZED_DIR)
-        else:
-            model = BartForConditionalGeneration.from_pretrained(FINETUNED_DIR)
-            model.eval()
-            model_label = "FP32 Fine-tuned (Local)"
-            size_mb = model_size_mb(FINETUNED_DIR)
-
-    return model, tokenizer, model_label, size_mb
+        return model, tokenizer, model_label, size_mb
+    except Exception as e:
+        st.error(f"Failed to load model from HF Hub: {e}")
+        st.info("Make sure HF_TOKEN is set in Streamlit secrets.")
+        st.stop()
 
 
 def summarize(model, tokenizer, text: str) -> tuple[str, float]:
