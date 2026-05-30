@@ -14,7 +14,7 @@ if hf_token:
     os.environ["HUGGING_FACE_HUB_TOKEN"] = hf_token
 
 # Try HF Hub first (for Streamlit Cloud), fall back to local
-HF_MODEL_NAME = "s4mt4r3/arxiv-bart-finetuned-int8"
+HF_MODEL_NAME = "st4r3/arxiv-bart-finetuned-int8"
 FINETUNED_DIR = "./fine_tuned_arxiv_bart"
 QUANTIZED_DIR = "./quantized_arxiv_bart"
 MAX_INPUT_LEN = 512
