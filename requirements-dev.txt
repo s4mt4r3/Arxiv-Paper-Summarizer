@@ -1,0 +1,9 @@
+# Extra dependencies for training / evaluation scripts (not needed by the Streamlit app)
+-r requirements.txt
+PyMuPDF==1.24.5
+accelerate
+rouge-score
+bert-score
+matplotlib
+optimum[onnxruntime]
+onnxruntime
