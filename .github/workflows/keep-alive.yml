@@ -1,0 +1,44 @@
+name: Keep Streamlit app awake
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Visit app in a real browser
+        env:
+          APP_URL: ${{ vars.APP_URL }}
+        run: |
+          test -n "$APP_URL" || { echo "Set the APP_URL repository variable"; exit 1; }
+          pip install playwright
+          playwright install --with-deps chromium
+          python - <<'PY'
+          import os
+          from playwright.sync_api import sync_playwright
+
+          url = os.environ["APP_URL"]
+
+          with sync_playwright() as p:
+              browser = p.chromium.launch()
+              page = browser.new_page()
+              page.goto(url, wait_until="domcontentloaded", timeout=120_000)
+
+              # Plain HTTP requests don't count as traffic; the app needs an open websocket session.
+              wake = page.get_by_role("button", name="Yes, get this app back up!")
+              try:
+                  wake.wait_for(timeout=15_000)
+                  wake.click()
+                  print("App was asleep; wake button clicked")
+              except Exception:
+                  print("App was already awake")
+
+              page.locator('[data-testid="stApp"]').wait_for(timeout=180_000)
+              page.wait_for_timeout(10_000)
+              print("App loaded OK")
+              browser.close()
+          PY

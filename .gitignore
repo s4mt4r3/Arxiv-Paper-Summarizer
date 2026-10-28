@@ -29,3 +29,5 @@ __pycache__/
 
 # Claude
 .claude/
+skills.md
+CLAUDE.md
